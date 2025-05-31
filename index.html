@@ -63,7 +63,9 @@
           Effective Solutions<br />
           for Your Business
         </h1>
-        <button class="hero-btn" type="button">Order Service</button>
+        <button class="hero-btn" type="button" data-modal-open>
+          Order Service
+        </button>
       </div>
     </main>
 
@@ -468,9 +470,9 @@
       </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="close-modal-btn">
+        <button class="close-modal-btn" data-modal-close>
           <svg class="modal-close-icon" width="8" height="8">
             <use href="./images/icons.svg#icon-close-black"></use>
           </svg>
@@ -527,8 +529,26 @@
               </svg>
             </div>
           </div>
+          <div class="modal-field">
+            <label for="user-comment" class="modal-form-label">Comment</label>
+            <textarea
+              class="text"
+              name="user-comment"
+              id="user-comment"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+          <div class="modal-field">
+            <input type="checkbox" name="policy" id="policy" value="true" />
+            <label form="policy" class="checkbox-text"
+              >I accept the terms and conditions of the
+              <a class="chekbox-link">Privacy Policy</a></label
+            >
+          </div>
+          <button type="submit" class="clasmodal-send-form">Send</button>
         </form>
       </div>
     </div>
+    <script src="./js/modal.js" defer></script>
   </body>
 </html>
