@@ -15,6 +15,9 @@
   --grey: rgba(46, 47, 66, 0.7);
   --svg-border-color: #8e8f99;
   --icon-social-hvfc: #31d0aa;
+  --modal-background: #fcfcfc;
+  --modal-icon-close-bg: #e7e9fc;
+  --border-input-color-passiv: rgba(46, 47, 66, 0.4);
   /*-----first-studio-text-color: #000000;
     --second-studio-text-color: #FFFFFF;
     --adress-text-color: #FFFFFF;--*/
@@ -473,4 +476,98 @@ img {
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--icon-social-hvfc);
+}
+
+/*----- MODAL ------*/
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 24px;
+  width: 408px;
+  min-height: 584px;
+  background-color: var(--modal-background);
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+}
+
+.close-modal-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--main-title-color);
+  border-radius: 50%;
+  background-color: var(--modal-icon-close-bg);
+}
+
+.modal-close-icon {
+  fill: black; /* Це також може бути корисним, але `color` важливіший для `currentColor` */
+  color: black; /* Додайте це! */
+}
+
+.modal-title {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.32px;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+.modal-field {
+  margin-bottom: 8px;
+}
+.modal-input {
+  background-color: transparent;
+  padding: 11px 0 11px 38px;
+  width: 100%;
+  border: 1px solid var(--border-input-color-passiv);
+  border-radius: 4px;
+  outline: transparent;
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border-color: var(--pasive-button-color);
+}
+.modal-form-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.48px;
+  color: var(--svg-border-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.modal-input:focus + .modal-field-icon {
+  fill: var(--pasive-button-color);
+}
+.modal-field-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--main-title-color);
 }
